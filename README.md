@@ -1,2 +1,2 @@
 # Enterprise-Systems-Project
-Group: Jake, William, CJ, Jonas 
+Group: William, Jonas, Tom, Jake, CJ
