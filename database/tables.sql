@@ -1,6 +1,7 @@
 
 CREATE TABLE customer_table (
-	customerID varchar(20) NOT NULL,
+	customerID int NOT NULL GENERATED ALWAYS AS IDENTITY
+        (START WITH 1, INCREMENT BY 1),
 	firstName  varchar(20) NOT NULL,
 	lastName  varchar(20) NOT NULL,
 	email  varchar(50) NOT NULL,
@@ -9,12 +10,13 @@ CREATE TABLE customer_table (
 
 	PRIMARY KEY (customerID)
 ) ;
-INSERT INTO customer_table (customerID, firstName, lastName, email, password, dateOfBirth) VALUES('AYEV0SEEIBSH6JK4N83S', 'Robert', 'Thomas', 'ramon1984@gmail.com', 'Password1', '1990-12-01');
-INSERT INTO customer_table (customerID, firstName, lastName, email, password, dateOfBirth) VALUES('W6R3NBA7L6L8BF0XCP6Z', 'Thomas', 'Farmer', 'wilford.erns@yahoo.com', 'Password1', '1972-10-12');
-INSERT INTO customer_table (customerID, firstName, lastName, email, password, dateOfBirth) VALUES('AGYE7LENFOLF11A1NXP1', 'Gertie', 'Leonard', 'addie_erdma5@hotmail.com', 'Password1', '1987-05-23');
+INSERT INTO customer_table (firstName, lastName, email, password, dateOfBirth) VALUES('Robert', 'Thomas', 'ramon1984@gmail.com', 'Qwerty', '1990-12-01');
+INSERT INTO customer_table (firstName, lastName, email, password, dateOfBirth) VALUES('Thomas', 'Farmer', 'wilford.erns@yahoo.com', 'abcdefg', '1972-10-12');
+INSERT INTO customer_table (firstName, lastName, email, password, dateOfBirth) VALUES('Gertie', 'Leonard', 'addie_erdma5@hotmail.com', 'MiraTheDog', '1987-05-23');
 
 CREATE TABLE driver_table (
-	driverID varchar(20) NOT NULL,
+	driverID int NOT NULL GENERATED ALWAYS AS IDENTITY
+        (START WITH 1, INCREMENT BY 1),
 	firstName  varchar(20) NOT NULL,
 	lastName  varchar(20) NOT NULL,
 	email  varchar(50) NOT NULL,
@@ -24,9 +26,9 @@ CREATE TABLE driver_table (
 
 	PRIMARY KEY (driverID)
 ) ;
-INSERT INTO driver_table (driverID, firstName, lastName, email, password, dateOfBirth, isDriving) VALUES('1XB094L40J502TYDCPM8', 'Roger', 'Thoma', 'stacey1989@gmail.com', 'Password1', '1976-04-09', 'false');
-INSERT INTO driver_table (driverID, firstName, lastName, email, password, dateOfBirth, isDriving) VALUES('BDQ9ZC2R3V1TIYZWD1KY', 'April', 'Garcia', 'brett19802015@gmail.com', 'Password1', '1993-03-21', 'false');
-INSERT INTO driver_table (driverID, firstName, lastName, email, password, dateOfBirth, isDriving) VALUES('7R6CGG183E7QITSPJIMT', 'Kimberly', 'Zepeda', 'aliya.hirth1@hotmail.com', 'Password1', '1966-06-23', 'false');
+INSERT INTO driver_table (firstName, lastName, email, password, dateOfBirth, isDriving) VALUES('Roger', 'Thomas', 'stacey1989@gmail.com', '123', '1976-04-09', 'false');
+INSERT INTO driver_table (firstName, lastName, email, password, dateOfBirth, isDriving) VALUES('April', 'Garcia', 'brett19802015@gmail.com', '1234', '1993-03-21', 'false');
+INSERT INTO driver_table (firstName, lastName, email, password, dateOfBirth, isDriving) VALUES('Kimberly', 'Zepeda', 'aliya.hirth1@hotmail.com', '12345', '1966-06-23', 'false');
 
 
 CREATE TABLE booking_table (
@@ -77,7 +79,8 @@ INSERT INTO customer_invoice (invoiceID, customerID, paymentTime, paymentAmount,
 
 
 CREATE TABLE head_office (
-	adminID varchar(20) NOT NULL,
+	adminID int NOT NULL GENERATED ALWAYS AS IDENTITY
+        (START WITH 1, INCREMENT BY 1),
 	firstName varchar(20) NOT NULL,
 	lastName varchar(20) NOT NULL,
 	email varchar(50) NOT NULL,
@@ -85,6 +88,6 @@ CREATE TABLE head_office (
 	
 	PRIMARY KEY (adminID) 
 ) ;
-INSERT INTO head_office (adminID, firstName, lastName, email, password) VALUES('aaj3mklf9oqp12khwzn3', 'Mathias', 'Sibman','gqrekovsky16@yopmail.com', 'adminpass1');
-INSERT INTO head_office (adminID, firstName, lastName, email, password) VALUES('abj3mklf9oqp12khwzn3', 'Benjamin', 'Hubert','ingerk13@yopmail.com', 'adminpass2');
-INSERT INTO head_office (adminID, firstName, lastName, email, password) VALUES('acj3mklf9oqp12khwzn3', 'Ebbe', 'Streme','bjebbe9@yopmail.com', 'adminpass3');
+INSERT INTO head_office (firstName, lastName, email, password) VALUES('Mathias', 'Sibman','gqrekovsky16@yopmail.com', 'a123');
+INSERT INTO head_office (firstName, lastName, email, password) VALUES('Benjamin', 'Hubert','ingerk13@yopmail.com', 'a234');
+INSERT INTO head_office (firstName, lastName, email, password) VALUES('Ebbe', 'Streme','bjebbe9@yopmail.com', 'a2345');
