@@ -1,9 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
         <style type="text/css">
-
             html, body {   
                 background: rgb(55, 62, 74) url('') center center no-repeat;
                 height:100%; }
