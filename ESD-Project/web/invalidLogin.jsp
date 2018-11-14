@@ -6,8 +6,9 @@
     <body>
         <div class="container">
             <div align="center" class="mainHeader"> Invalid credentials </div>
-            <div align="center" class="subHeader"> If you would like to register click the register button or <a href="index.html">go back</a> to try again </div>
-
+            <br>
+            <div align="center" class="subHeader"> If you would like to register click the register button or <a class="customLink" href="index.html"> go back </a> to try again </div>
+            <br>
             <form class="formCenter" method="link" action="register.jsp">
                 <input type="submit" class="submitButton" value="Register"/>
             </form>
