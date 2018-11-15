@@ -14,14 +14,14 @@ public class UserBean {
 	
       private  String email;
       private  String password;
-      private static String firstName;
-      private static String lastName;
+      private  String firstName;
+      private  String lastName;
       private String dob;
       public boolean valid;
       
 	
 	
-      public static String getFirstName() {
+      public  String getFirstName() {
          return firstName;
 	}
 
@@ -30,7 +30,7 @@ public class UserBean {
 	}
 
 	
-      public static String getLastName() {
+      public  String getLastName() {
          return lastName;
 	}
 
