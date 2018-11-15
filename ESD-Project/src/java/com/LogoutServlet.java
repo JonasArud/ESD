@@ -1,4 +1,4 @@
-package com.journaldev.servlet.session;
+package com;
 
 import java.io.IOException;
 
