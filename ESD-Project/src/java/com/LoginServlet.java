@@ -22,14 +22,30 @@ public class LoginServlet extends HttpServlet {
             user = UserDAO.login(user);
 
             if (user.isValid()) {
-                        HttpSession session = request.getSession();
-			session.setAttribute("user", "user");
-			//setting session to expiry in 30 mins
-			session.setMaxInactiveInterval(30*60);
-			Cookie userName = new Cookie("user", user.getEmail());
-			userName.setMaxAge(30*60);
-			response.addCookie(userName);
-                        response.sendRedirect("userLogged.jsp"); //logged-in page      		
+                HttpSession session = request.getSession();
+                session.setAttribute("user", "user");
+                //set session expiry to 30 mins
+                session.setMaxInactiveInterval(30 * 60);
+                Cookie userName = new Cookie("userName", user.getEmail());
+                Cookie userType = new Cookie("userType", user.getType());
+                // set user cookies
+                userName.setMaxAge(30 * 60);
+                response.addCookie(userName);
+                response.addCookie(userType);
+                
+                if (null != user.getType()) switch (user.getType()) { // Redirect to user home
+                    case "Driver":
+                        response.sendRedirect("driverHome.jsp");
+                        break;
+                    case "Customer":
+                        response.sendRedirect("customerHome.jsp");
+                        break;
+                    case "HeadOffice":
+                        response.sendRedirect("headOfficeHome.jsp");
+                        break;
+                    default:
+                        break;
+                }
             } else {
                 response.sendRedirect("invalidLogin.jsp"); //error page 
             }
