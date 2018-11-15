@@ -28,10 +28,13 @@ public class LoginServlet extends HttpServlet {
                 session.setMaxInactiveInterval(30 * 60);
                 Cookie userName = new Cookie("userName", user.getEmail());
                 Cookie userType = new Cookie("userType", user.getType());
+                Cookie userID = new Cookie("userID", user.getID());
                 // set user cookies
                 userName.setMaxAge(30 * 60);
                 response.addCookie(userName);
                 response.addCookie(userType);
+                response.addCookie(userID);
+         
                 
                 if (null != user.getType()) switch (user.getType()) { // Redirect to user home
                     case "Driver":

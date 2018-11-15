@@ -36,7 +36,8 @@ public class UserDAO {
                 + password + "'";
         try {
             boolean more = false;
-            String type = " ";
+            String type = null;
+            String ID = null;
 
             //connect to DB
             currentCon = ConnectionManager.getConnection();
@@ -47,16 +48,25 @@ public class UserDAO {
                 rs = stmt.executeQuery(customerQuery);
                 more = rs.next();
                 type = "Customer";
+                if (more) {
+                    ID = rs.getString("CUSTOMERID");
+                }
             }
             if (!more) {
                 rs = stmt.executeQuery(headOfficeQuery);
                 more = rs.next();
                 type = "HeadOffice";
+                if (more) {
+                    ID = rs.getString("ADMINID");
+                }
             }
             if (!more) {
                 rs = stmt.executeQuery(driverQuery);
                 more = rs.next();
                 type = "Driver";
+                if (more) {
+                    ID = rs.getString("DRIVERID");
+                }
             }
             if (!more) {
                 //  User does not exist
@@ -73,6 +83,7 @@ public class UserDAO {
                 bean.setFirstName(firstName);
                 bean.setLastName(lastName);
                 bean.setValid(true);
+                bean.setID(ID);
                 bean.setType(type);
             }
         } catch (SQLException ex) {

@@ -17,6 +17,15 @@ public class UserBean {
     private String lastName;
     private String dob;
     private String type;
+    private String ID;
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
     public boolean valid;
 
     public String getType() {
