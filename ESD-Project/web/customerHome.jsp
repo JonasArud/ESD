@@ -40,6 +40,7 @@
                     }
                     if (cookie.getName().equals("userType")) {
                         userType = cookie.getName();
+                        System.out.println(userType);
                     }
                 }
             } else {
